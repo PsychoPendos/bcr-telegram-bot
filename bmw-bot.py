@@ -1,14 +1,18 @@
 import asyncio
 import logging
+import os
 
 from aiogram import Bot, Dispatcher, types
 from aiogram.client.bot import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.filters import Command
 from aiogram.types import ContentType
+from dotenv import load_dotenv
 
-TOKEN = os.environ['TOKEN']
-ALLOWED_CHAT_ID = os.environ['ALLOWED_CHAT_ID']
+load_dotenv()
+
+TOKEN = os.getenv('TOKEN')
+ALLOWED_CHAT_ID = os.getenv('ALLOWED_CHAT_ID')
 
 bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 dp = Dispatcher()
