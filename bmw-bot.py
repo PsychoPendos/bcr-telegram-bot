@@ -7,8 +7,8 @@ from aiogram.enums import ParseMode
 from aiogram.filters import Command
 from aiogram.types import ContentType
 
-TOKEN = '8125139471:AAEvu0HTA-HL_dzo0u8FRJiBZbGiYVpTzRQ'
-ALLOWED_CHAT_ID = '-1002164509372'
+TOKEN = os.environ['TOKEN']
+ALLOWED_CHAT_ID = os.environ['ALLOWED_CHAT_ID']
 
 bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 dp = Dispatcher()
